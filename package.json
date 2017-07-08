@@ -1,0 +1,89 @@
+{
+  "name": "daniel-langkilde-client",
+  "version": "1.0.0",
+  "description": "Personal Site for Daniel Langkilde",
+  "main": "src/index.js",
+  "repository": "",
+  "scripts": {
+    "clean": "rimraf build",
+    "test": "./node_modules/jest/bin/jest.js",
+    "test:watch": "./node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "./node_modules/jest/bin/jest.js --coverage",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "npm run test && NODE_ENV=production npm run clean && node ./node_modules/webpack/bin/webpack.js -p"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jest_setup.js"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss|less)$": "./configs/jest/styleMock.js",
+      "\\.(png|jpg|gif|ttf|eot|svg)$": "./configs/jest/fileMock.js"
+    },
+    "moduleDirectories": ["node_modules"]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^20.0.2",
+    "@types/node": "^8.0.9",
+    "@types/react": "^15.0.34",
+    "@types/react-dom": "^15.5.1",
+    "awesome-typescript-loader": "^3.2.1",
+    "babel-core": "^6.2.1",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "eslint": "^4.1.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.0-rc.1",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "identity-obj-proxy": "^3.0.0",
+    "image-webpack-loader": "^3.3.1",
+    "imagemin-webpack-plugin": "^1.5.0-beta.0",
+    "jest": "^20.0.4",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.1.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.3",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "regenerator-runtime": "^0.10.5",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.8.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "babel-preset-stage-1": "^6.1.18",
+    "lodash": "^4.17.4",
+    "path": "^0.12.7",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.0.4",
+    "redux-form": "^6.8.0",
+    "redux-thunk": "^2.0.1"
+  }
+}
