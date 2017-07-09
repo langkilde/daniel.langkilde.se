@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 
-const image = require('../assets/images/langkilde.jpg');
+import image = require("../assets/images/langkilde.jpg");
 
 class Portrait extends React.Component {
   
-  constructor(props) {
+  private constructor(props) {
     super(props);
   }
   
-  render() {
+  public render() {
     return (
       <div className="left-side desktop-only">
         <a href="https://www.daniel.langkilde.se">

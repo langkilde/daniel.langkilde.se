@@ -1,14 +1,9 @@
 {
   "compilerOptions": {
-    "outDir": "./src/build",
-    "sourceMap": true,
-    "noImplicitAny": false,
     "module": "commonjs",
-    "target": "es5",
-    "jsx": "react"
-  },
-  "include": [
-    "./src/**/*"
-  ],
-  "allowJs": true
+    "sourceMap": true,
+    "jsx": "react",
+    "baseUrl": "src",
+    "strictNullChecks": false
+  }
 }

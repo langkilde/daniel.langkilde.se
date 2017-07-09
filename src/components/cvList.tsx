@@ -1,45 +1,48 @@
-import * as React from 'react';
+import * as React from "react";
 
-interface CvListProps {
+interface ICvListProps {
   grouping: string;
   list_items: Array<{
     position: string,
     link: string,
     organization: string,
     duration: string
-    current: Partial<boolean>
-  }>
+    current: Partial<boolean>,
+  }>;
 }
 
-class CvList extends React.Component<CvListProps, any> {
+class CvList extends React.Component<ICvListProps, any> {
   
-  constructor(props) {
+  private static renderItem(ListItem) {
+    let result: any;
+    if (ListItem.current) {
+      result =
+        <li key={ListItem.position}>
+          <b>{ListItem.position},
+            <a href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}
+          </b>
+        </li>;
+    } else {
+      result = <li key={ListItem.position}>{ListItem.position}, <a
+        href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}</li>;
+    }
+    return (result);
+  }
+  
+  private constructor(props) {
     super(props);
   }
   
-  renderItem(ListItem) {
-    let result: any;
-    if (ListItem.current) {
-      result = <li key={ListItem.position}><b>{ListItem.position}, <a href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}</b></li>
-    } else {
-      result = <li key={ListItem.position}>{ListItem.position}, <a
-        href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}</li>
-    }
-    return(result)
-  }
-  
-  render() {
+  public render() {
     return (
       <div>
         <h3>{this.props.grouping}</h3>
         <ul>
-          {this.props.list_items.map(this.renderItem)}
+          {this.props.list_items.map(CvList.renderItem)}
         </ul>
       </div>
-    )
+    );
   }
 }
 
 export default CvList;
-
-

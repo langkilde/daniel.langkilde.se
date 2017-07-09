@@ -1,15 +1,18 @@
-import * as React from 'react';
-import Portrait from './portrait';
-import Title from './title';
-import CvList from './cvList';
-import CV from '../data/cv';
-import ProfilesList from "./profilesList";
-import Profiles from '../data/profiles';
+import * as React from "react";
+
 import BioList from "./bioList";
-import Bio from '../data/bio';
+import CvList from "./cvList";
+import Portrait from "./portrait";
+import ProfilesList from "./profilesList";
+import Title from "./title";
+
+import Bio from "../data/bio";
+import CV from "../data/cv";
+import Profiles from "../data/profiles";
 
 export default class App extends React.Component {
-  render() {
+  
+  public render() {
     return (
       <div className="container">
         <Portrait/>

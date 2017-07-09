@@ -1,5 +1,5 @@
-const {resolve}       = require("path");
-const {CheckerPlugin} = require("awesome-typescript-loader")
+const {resolve} = require("path");
+const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -24,6 +24,25 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          // eslint options (if necessary)
+        }
+      },
+      {
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        loader: 'tslint-loader',
+        exclude: [/(node_modules)/, './src/assets/*'],
+      },
+      {
+        test: /\.tsx?$/,
+        loaders: ['awesome-typescript-loader'],
+        exclude: [/(node_modules)/, './src/assets/*']
+      },
+      {
         test: /\.json$/,
         loader: 'json-loader'
       },
@@ -37,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        use:  "awesome-typescript-loader"
+        use: "awesome-typescript-loader"
       },
       {
         test: /\.css$/,
@@ -58,7 +77,7 @@ module.exports = {
         loader: "eslint-loader",
       },
       {
-        test:    /\.(jpe?g|png|gif|svg|ico)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loaders: [
           'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
@@ -101,9 +120,17 @@ module.exports = {
       template: 'src/index.html'
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        tslint: {
+          emitErrors: true,
+          failOnHint: true
+        }
+      }
+    })
   ],
   stats: {
     providedExports: false,

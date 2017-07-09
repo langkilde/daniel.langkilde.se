@@ -23,7 +23,9 @@
       "\\.(css|scss|less)$": "./configs/jest/styleMock.js",
       "\\.(png|jpg|gif|ttf|eot|svg)$": "./configs/jest/fileMock.js"
     },
-    "moduleDirectories": ["node_modules"]
+    "moduleDirectories": [
+      "node_modules"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -42,10 +44,6 @@
     "css-loader": "^0.28.4",
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^1.5.1",
-    "eslint": "^4.1.1",
-    "eslint-config-google": "^0.9.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^3.0.0-rc.1",
     "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
@@ -66,7 +64,9 @@
     "style-loader": "^0.18.2",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-webpack-plugin": "^0.8.0",
+    "ts-loader": "^2.2.2",
     "tslint": "^5.5.0",
+    "tslint-loader": "^3.5.3",
     "typescript": "^2.4.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",

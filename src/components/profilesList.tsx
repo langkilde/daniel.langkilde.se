@@ -1,38 +1,37 @@
-import * as React from 'react';
+import * as React from "react";
 
-interface ProfilesListPros {
+interface IProfilesListPros {
   grouping: string;
   list_items: Array<{
     platform: string,
     link: string,
-    link_text: string
-  }>
+    link_text: string,
+  }>;
 }
 
-class ProfilesList extends React.Component<ProfilesListPros, any> {
+class ProfilesList extends React.Component<IProfilesListPros, any> {
   
-  constructor(props) {
+  private static renderProfile(profile) {
+    return (
+      <li key={profile.platform}>{profile.platform} - <a href={profile.link}>{profile.link_text}</a></li>
+    );
+  }
+  
+  private constructor(props) {
     super(props);
   }
   
-  renderProfile(profile) {
-    return (
-      <li key={profile.platform}>{profile.platform} - <a href={profile.link}>{profile.link_text}</a></li>
-    )
-  }
-  
-  render() {
+  public render() {
     return (
       <div>
         <h3>{this.props.grouping}</h3>
         <ul>
-          {this.props.list_items.map(this.renderProfile)}
+          {this.props.list_items.map(ProfilesList.renderProfile)}
         </ul>
       </div>
-    )
+    );
   }
+  
 }
 
 export default ProfilesList;
-
-
