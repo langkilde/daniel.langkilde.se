@@ -30,6 +30,13 @@ export default cv = {
         organization: "Research Academy of Young Scientists",
         duration: "2009-2017",
         current: false
+      },
+      {
+        position: "President",
+        link: "http://www.chalmersstudentkar.se/en",
+        organization: "Chalmers Student Union",
+        duration: "2012-2013",
+        current: false
       }
     ]
   },
@@ -62,6 +69,20 @@ export default cv = {
         link: "http://en.sjtu.edu.cn/",
         organization: "Jiao Tong University",
         duration: "Spring 2007",
+        current: false,
+      },
+      {
+        position: "Research Student",
+        link: "http://www.cee.org/research-science-institute",
+        organization: "Research Academy of Young Scientists",
+        duration: "2009-2017",
+        current: false
+      },
+      {
+        position: "High School",
+        link: "http://www.samskolan.se/",
+        organization: "Göteborgs Högre Samskola",
+        duration: "2003-2006",
         current: false
       }
     ]
