@@ -1,0 +1,22 @@
+const express = require("express");
+const server = express();
+const path = require('path');
+
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log('starting dev server');
+  const webpackDevMiddleware = require("webpack-dev-middleware");
+  const webpack = require("webpack");
+  const webpackConfig = require("./webpack.config.js");
+  server.use(webpackDevMiddleware(webpack(webpackConfig)));
+  server.use(webpackDevMiddleware(webpack(webpackConfig)));
+} else {
+  console.log('starting production server');
+  server.use(express.static('build'));
+  server.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
+  });
+}
+
+const PORT = 8787;
+server.listen(PORT, () => console.log('listening to port', PORT));
