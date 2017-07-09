@@ -1,7 +1,11 @@
 const express = require("express");
-const server = express();
+const logger = require('morgan');
 const path = require('path');
+const https = require('https');
+const fs = require('fs');
+const server = express();
 
+server.use(logger('combined'));
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('starting dev server');
