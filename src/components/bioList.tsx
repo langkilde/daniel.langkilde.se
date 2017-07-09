@@ -15,7 +15,7 @@ class BioList extends React.Component<bioListProps, any> {
   
   renderBioItem(bioItem) {
     return (
-      <li>{bioItem.sentence}</li>
+      <li key={bioItem.sentence}>{bioItem.sentence}</li>
     )
   }
   

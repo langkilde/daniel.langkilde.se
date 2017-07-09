@@ -11,10 +11,8 @@ import Bio from '../data/bio';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <div className="left-side">
-          <Portrait/>
-        </div>
+      <div className="container">
+        <Portrait/>
         <div className="right-side">
           <Title/>
           <CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>

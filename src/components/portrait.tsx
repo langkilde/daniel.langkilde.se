@@ -10,15 +10,9 @@ class Portrait extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="left-side desktop-only">
         <a href="https://www.daniel.langkilde.se">
-          <img className="mobile-only portrait" src={image}/>
-        </a>
-        <a href="https://www.daniel.langkilde.se">
-          <img className="tablet-only portrait" src={image}/>
-        </a>
-        <a href="https://www.daniel.langkilde.se">
-          <img className="desktop-only portrait" src={image}/>
+          <img className="portrait" src={image}/>
         </a>
       </div>
     );
