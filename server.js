@@ -22,5 +22,5 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-const PORT = 8787;
+const PORT = 3000;
 server.listen(PORT, () => console.log('listening to port', PORT));
