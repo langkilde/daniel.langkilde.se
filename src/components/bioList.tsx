@@ -15,7 +15,7 @@ class BioList extends React.Component<IBioListProps, any> {
   
   public render() {
     return (
-      <div>
+      <div className="item-container">
         <h3>{this.props.grouping}</h3>
         <ul>
           {this.props.list_items.map(this.renderBioItem)}
