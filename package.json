@@ -10,7 +10,7 @@
     "test:watch": "./node_modules/jest/bin/jest.js --watch",
     "test:coverage": "./node_modules/jest/bin/jest.js --coverage",
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build": "npm run test && NODE_ENV=production npm run clean && node ./node_modules/webpack/bin/webpack.js -p"
+    "build": "npm run test && npm run clean && NODE_ENV=production node ./node_modules/webpack/bin/webpack.js -p"
   },
   "jest": {
     "setupFiles": [
