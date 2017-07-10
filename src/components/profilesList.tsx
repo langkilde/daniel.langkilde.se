@@ -23,10 +23,12 @@ class ProfilesList extends React.Component<IProfilesListPros, any> {
   
   public render() {
     return (
-      <div className="item-container">
+      <div>
         <h3>{this.props.grouping}</h3>
         <ul>
-          {this.props.list_items.map(ProfilesList.renderProfile)}
+          <div className="item-container">
+            {this.props.list_items.map(ProfilesList.renderProfile)}
+          </div>
         </ul>
       </div>
     );
