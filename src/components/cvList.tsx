@@ -38,9 +38,11 @@ class CvList extends React.Component<ICvListProps, any> {
     return (
       <div>
         <h3>{this.props.grouping}</h3>
-        <ul>
-          {this.props.list_items.map(CvList.renderItem)}
-        </ul>
+        <div className="item-container">
+          <ul>
+            {this.props.list_items.map(CvList.renderItem)}
+          </ul>
+        </div>
       </div>
     );
   }

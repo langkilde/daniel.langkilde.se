@@ -10,7 +10,7 @@ class Title extends React.Component {
   
   public render() {
     return (
-      <div>
+      <div className="header-container">
         <a href="https://www.daniel.langkilde.se">
           <img className="header-portrait mobile-only " src={image}/>
           <img className="header-portrait tablet-only" src={image}/>

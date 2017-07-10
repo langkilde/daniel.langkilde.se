@@ -18,10 +18,12 @@ export default class App extends React.Component {
         <Portrait/>
         <div className="right-side">
           <Title/>
-          <CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>
-          <CvList grouping={CV.SCHOOL.grouping} list_items={CV.SCHOOL.list_items}/>
-          <ProfilesList grouping={Profiles.grouping} list_items={Profiles.list_items}/>
-          <BioList grouping={Bio.grouping} list_items={Bio.list_items}/>
+          <div className="list-container">
+            <CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>
+            <CvList grouping={CV.SCHOOL.grouping} list_items={CV.SCHOOL.list_items}/>
+            <ProfilesList grouping={Profiles.grouping} list_items={Profiles.list_items}/>
+            <BioList grouping={Bio.grouping} list_items={Bio.list_items}/>
+          </div>
         </div>
       </div>
     );
