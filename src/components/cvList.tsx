@@ -26,6 +26,7 @@ class CvList extends React.Component<ICvListProps, any> {
       result = <li key={ListItem.position}>{ListItem.position}, <a
         href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}</li>;
     }
+
     return (result);
   }
   
