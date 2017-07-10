@@ -2,7 +2,7 @@ const {resolve} = require("path");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
