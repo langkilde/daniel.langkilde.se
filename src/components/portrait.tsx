@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import image = require("../assets/images/langkilde.jpg");
+const image = require("../assets/images/langkilde.jpg");
 
 class Portrait extends React.Component {
   

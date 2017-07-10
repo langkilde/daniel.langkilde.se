@@ -24,14 +24,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-        options: {
-          // eslint options (if necessary)
-        }
-      },
-      {
         enforce: 'pre',
         test: /\.tsx?$/,
         loader: 'tslint-loader',
@@ -39,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loaders: ['awesome-typescript-loader'],
+        loaders: ['babel-loader', 'awesome-typescript-loader'],
         exclude: [/(node_modules)/, './src/assets/*']
       },
       {
@@ -47,16 +39,8 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
         test: /\.html$/,
         loader: 'html-loader'
-      },
-      {
-        test: /\.tsx?$/,
-        use: "awesome-typescript-loader"
       },
       {
         test: /\.css$/,
@@ -70,11 +54,6 @@ module.exports = {
           fallback: "style-loader",
           use: "css-loader!sass-loader",
         }),
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,

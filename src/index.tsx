@@ -7,8 +7,6 @@ import { BrowserRouter } from "react-router-dom";
 import { applyMiddleware } from "redux";
 import { createStore } from "redux";
 import reduxThunk from "redux-thunk";
-import registerServiceWorker from "./registerServiceWorker";
-
 import App from "./components/app";
 import reducers from "./reducers";
 
