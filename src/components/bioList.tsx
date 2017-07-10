@@ -15,10 +15,12 @@ class BioList extends React.Component<IBioListProps, any> {
   
   public render() {
     return (
-      <div className="item-container">
+      <div>
         <h3>{this.props.grouping}</h3>
         <ul>
+          <div className="item-container">
           {this.props.list_items.map(this.renderBioItem)}
+          </div>
         </ul>
       </div>
     );
