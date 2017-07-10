@@ -2,9 +2,9 @@ const {resolve} = require("path");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-
 
 const VENDOR_LIBS = [
   "axios", "babel-preset-stage-1", "lodash", "path",
@@ -12,7 +12,7 @@ const VENDOR_LIBS = [
   "redux", "redux-form", "redux-thunk"
 ];
 
-module.exports = {
+const webpackConfig = {
   entry: {
     bundle: './src/index.tsx',
     vendor: VENDOR_LIBS
@@ -99,7 +99,9 @@ module.exports = {
       template: 'src/index.html'
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
     }),
     new ExtractTextPlugin('style.css'),
     new webpack.LoaderOptionsPlugin({
@@ -129,3 +131,16 @@ module.exports = {
     hints: false
   }
 };
+
+if (process.env.NODE_ENV === 'production') {
+  console.log('production mode: adding uglify');
+  webpackConfig.plugins.push(
+    new UglifyJsPlugin({
+      compress: {
+        screw_ie8: true
+      }
+    })
+  )
+}
+
+module.exports = webpackConfig;
