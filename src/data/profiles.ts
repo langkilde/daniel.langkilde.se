@@ -3,7 +3,7 @@ export default profiles = {
   grouping: "Profiles",
   list_items: [
     {
-      link: "kaggle.com/langkilde",
+      link: "https://www.kaggle.com/langkilde",
       link_text: "kaggle.com/langkilde",
       platform: "Kaggle",
       
