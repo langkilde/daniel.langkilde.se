@@ -28,7 +28,7 @@ class BioList extends React.Component<IBioListProps, any> {
   
   private renderBioItem(bioItem) {
     return (
-      <li key={bioItem.sentence}>{bioItem.sentence}</li>
+      <li key={bioItem.sentence} className="mobile-specific-list">{bioItem.sentence}</li>
     );
   }
   

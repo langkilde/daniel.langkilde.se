@@ -17,13 +17,13 @@ class CvList extends React.Component<ICvListProps, any> {
     let result: any;
     if (ListItem.current) {
       result =
-        <li key={ListItem.position}>
+        <li key={ListItem.position} className="mobile-specific-list">
           <b>{ListItem.position},
             <a href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}
           </b>
         </li>;
     } else {
-      result = <li key={ListItem.position}>{ListItem.position}, <a
+      result = <li key={ListItem.position} className="mobile-specific-list">{ListItem.position}, <a
         href={ListItem.link}>{ListItem.organization}</a>, {ListItem.duration}</li>;
     }
 
