@@ -14,17 +14,18 @@ export default class App extends React.Component {
   
   public render() {
     return (
-      <div className="container">
-        <Portrait/>
-        <div className="right-side">
-          <Title/>
-          <div className="list-container">
-            <CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>
-            <CvList grouping={CV.SCHOOL.grouping} list_items={CV.SCHOOL.list_items}/>
-            <ProfilesList grouping={Profiles.grouping} list_items={Profiles.list_items}/>
-            <BioList grouping={Bio.grouping} list_items={Bio.list_items}/>
-          </div>
+      <div className="section group">
+        <div className="col span_1_of_2 desktop-only">
+          <Portrait/>
         </div>
+        <div className="col span_2_of_2">
+          <Title/>
+          <CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>
+          <CvList grouping={CV.SCHOOL.grouping} list_items={CV.SCHOOL.list_items}/>
+          <ProfilesList grouping={Profiles.grouping} list_items={Profiles.list_items}/>
+          <BioList grouping={Bio.grouping} list_items={Bio.list_items}/>
+        </div>
+        <div className="footer">busy building things</div>
       </div>
     );
   }

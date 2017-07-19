@@ -12,10 +12,9 @@ class Title extends React.Component {
     return (
       <div className="header-container">
         <a href="https://www.daniel.langkilde.se">
-          <img className="header-portrait mobile-only " src={image}/>
-          <img className="header-portrait tablet-only" src={image}/>
+          <img className="header-portrait mobile-only" src={image}/>
         </a>
-        <h1>Daniel Langkilde</h1>
+        <h1 className="mobile-only-header">Daniel Langkilde</h1>
         <p>Passionate about creating value using machine learning.</p>
         <hr/>
       </div>

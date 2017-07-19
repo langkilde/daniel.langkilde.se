@@ -10,7 +10,7 @@ class Portrait extends React.Component {
   
   public render() {
     return (
-      <div className="left-side desktop-only">
+      <div>
         <a href="https://www.daniel.langkilde.se">
           <img className="portrait" src={image}/>
         </a>

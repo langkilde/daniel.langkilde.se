@@ -36,3 +36,4 @@ src/reducers/index.js
 src/reducers/index.js.map
 src/registerServiceWorker.js
 src/registerServiceWorker.js.map
+package-lock.json

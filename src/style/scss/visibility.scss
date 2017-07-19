@@ -2,26 +2,11 @@
 
 // tablet
 @media only screen and (min-width: $mobile-width-min) and (max-width: $mobile-width-max) {
+  h1.mobile-only-header {
+    font-size: 25px;
+  }
+
   .mobile-only {
-    display: block !important;
-  }
-
-  .tablet-only {
-    display: none !important;
-  }
-
-  .desktop-only {
-    display: none !important;
-  }
-}
-
-// tablet
-@media only screen and (min-width: $tablet-width-min) and (max-width: $tablet-width-max) {
-  .mobile-only {
-    display: none !important;
-  }
-
-  .tablet-only {
     display: block !important;
   }
 
@@ -36,8 +21,9 @@
     display: none !important;
   }
 
-  .tablet-only {
-    display: none !important;
+  .section {
+    margin-top: 20px;
+    margin-left: 1px;
   }
 
   .desktop-only {
