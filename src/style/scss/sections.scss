@@ -35,13 +35,13 @@
   width: 60%;
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: $desktop-width-min) {
   .col {
     margin: 1% 0 2% 1%;
   }
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: $desktop-width-min) {
   .span_2_of_2,
   .span_1_of_2 {
     width: 98%;
