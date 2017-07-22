@@ -21,9 +21,9 @@ export default cv = {
       },
       {
         current: false,
-        duration: "2013-current",
+        duration: "Fall 2014",
         link: "https://amplab.cs.berkeley.edu/",
-        organization: "Chalmers University of Technology",
+        organization: "AMP Lab, UC Berkeley",
         position: "Visiting Scholar",
       },
       {
