@@ -1,25 +1,41 @@
-/* eslint-env browser */
-
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import { applyMiddleware } from "redux";
-import { createStore } from "redux";
-import reduxThunk from "redux-thunk";
-import App from "./components/app";
-import reducers from "./reducers";
 
-import "./assets/images/favicon.ico";
+import { App } from "./components/app";
+
+import "./images/favicon.ico";
 import "./style/scss/all.scss";
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
-const store = createStoreWithMiddleware(reducers);
+const renderRoot = (app: JSX.Element) => {
+  ReactDOM.render(app, document.getElementById("root"));
+};
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
+if (process.env.NODE_ENV === "production") {
+  renderRoot((
+    <App />
+  ));
+} else {
+  const HotContainer = require("react-hot-loader").AppContainer;
+  renderRoot((
+    <HotContainer>
       <App />
-    </BrowserRouter>
-  </Provider>
-  , document.querySelector(".root"));
+    </HotContainer>
+  ));
+
+  if (module.hot) {
+    module.hot.accept("./app", async () => {
+      const NextApp = (await System.import("./components/app")).App;
+      renderRoot((
+        <HotContainer>
+          <NextApp />
+        </HotContainer>
+      ));
+    });
+
+    // reducers
+    // module.hot.accept("../modules/root-reducer", () => {
+    //   const newRootReducer = require("./root-reducer").default;
+    //   store.replaceReducer(newRootReducer);
+    // });
+  }
+}

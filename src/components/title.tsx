@@ -1,25 +1,29 @@
 import * as React from "react";
 
-const image = require("../assets/images/langkilde.jpg");
+const image = require("../images/langkilde.jpg");
 
-class Title extends React.Component {
+interface ITitle {
+  byline: string;
+  name: string;
+}
+
+export class Title extends React.Component<ITitle, {}> {
   
-  private constructor(props) {
+  constructor(props: ITitle) {
     super(props);
   }
   
-  public render() {
+  public render(): React.ReactElement<{}> {
     return (
       <div className="header-container">
         <a href="https://www.daniel.langkilde.se">
           <img className="header-portrait mobile-only" src={image}/>
         </a>
-        <h1 className="mobile-only-header">Daniel Langkilde</h1>
-        <p>Passionate about creating value using machine learning.</p>
+        <h1 className="mobile-only-header">{this.props.name}</h1>
+        <p>{this.props.byline}</p>
         <hr/>
       </div>
     );
   }
+  
 }
-
-export default Title;

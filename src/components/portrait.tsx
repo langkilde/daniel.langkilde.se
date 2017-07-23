@@ -1,12 +1,8 @@
 import * as React from "react";
 
-const image = require("../assets/images/langkilde.jpg");
+const image = require("../images/langkilde.jpg");
 
-class Portrait extends React.Component {
-  
-  private constructor(props) {
-    super(props);
-  }
+export class Portrait extends React.Component<{}, any> {
   
   public render() {
     return (
@@ -18,5 +14,3 @@ class Portrait extends React.Component {
     );
   }
 }
-
-export default Portrait;
