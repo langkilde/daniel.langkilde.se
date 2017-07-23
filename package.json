@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "personal landing page for daniel langkilde",
   "author": "Daniel Langkilde <daniel.langkilde@gmail.com> (https://daniel.langkilde.se/)",
+  "homepage" : "https://www.daniel.langkilde.se",
   "repository": "https://github.com/langkilde/daniel.langkilde.se.git",
   "license": "MIT",
   "main": "build/app.js",

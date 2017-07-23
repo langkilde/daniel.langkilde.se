@@ -1,16 +1,12 @@
 import * as React from "react";
 
-
+import {List} from "./list";
 import {Portrait} from "./portrait";
 import {Title} from "./title";
-// import ProfilesList from "./profilesList";
-// import Title from "./title";
-
-// import BioList from "./bioList";
-// import CvList from "./cvList";
-// import Bio from "../data/bio";
-// import CV from "../data/cv";
-// import Profiles from "../data/profiles";
+import {workList} from "../data/work";
+import {schoolList} from "../data/school";
+import {profilesList} from "../data/profiles";
+import {bioList} from "data/bio";
 
 export class App extends React.Component<{}, {}> {
   
@@ -22,10 +18,10 @@ export class App extends React.Component<{}, {}> {
         </div>
         <div className="col span_2_of_2">
           <Title name="Daniel Langkilde" byline="Passionate about creating value using machine learning."/>
-          {/*<CvList grouping={CV.WORK.grouping} list_items={CV.WORK.list_items}/>*/}
-          {/*<CvList grouping={CV.SCHOOL.grouping} list_items={CV.SCHOOL.list_items}/>*/}
-          {/*<ProfilesList grouping={Profiles.grouping} list_items={Profiles.list_items}/>*/}
-          {/*<BioList grouping={Bio.grouping} list_items={Bio.list_items}/>*/}
+          <List {...workList}/>
+          <List {...schoolList}/>
+          <List {...profilesList}/>
+          <List {...bioList}/>
         </div>
         <div className="footer">busy building things</div>
       </div>
