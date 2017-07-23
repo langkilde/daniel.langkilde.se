@@ -6,6 +6,5 @@ install:
   - npm install
 script:
   - npm lint
-  - npm tsc
   - npm test
   - npm build
