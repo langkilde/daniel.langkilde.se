@@ -19,9 +19,23 @@ export class List extends React.Component<IList> {
   }
   
   private static renderItem(ListItem: IListItem) {
+    if (ListItem.link && ListItem.time) {
+      return (
+        <li key={ListItem.description} className="mobile-specific-list">
+          {ListItem.description}, <a href={ListItem.link}>{ListItem.link_text}</a>, {ListItem.time}
+        </li>
+      );
+    }
+    if (ListItem.link) {
+      return (
+        <li key={ListItem.description} className="mobile-specific-list">
+          {ListItem.description} - <a href={ListItem.link}>{ListItem.link_text}</a>
+        </li>
+      );
+    }
     return (
       <li key={ListItem.description} className="mobile-specific-list">
-        {ListItem.description}, <a href={ListItem.link}>{ListItem.link_text}</a>, {ListItem.time}
+        {ListItem.description}
       </li>
     );
   }
