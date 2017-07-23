@@ -64,7 +64,6 @@
     "jest-cli": "^20.0.4",
     "loglevel": "^1.4.1",
     "node-sass": "^4.5.3",
-    "react-create-class": "^1.0.0",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.6.1",
     "rimraf": "^2.6.1",
