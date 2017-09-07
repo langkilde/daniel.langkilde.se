@@ -9,3 +9,4 @@ lib-cov
 .lock-wscript
 node_modules
 .idea
+v8-compile-cache*
