@@ -8,7 +8,7 @@ import {schoolList} from "../data/school";
 import {profilesList} from "../data/profiles";
 import {bioList} from "data/bio";
 
-export class App extends React.Component<{}, {}> {
+export class App extends React.Component<{}> {
   
   public render() {
     return (

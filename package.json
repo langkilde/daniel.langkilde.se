@@ -16,7 +16,7 @@
     "dev:dash": "webpack-dashboard -m -- webpack-dev-server --config configs/webpack.config.js --open",
     "dev2": "webpack-dashboard -m -- webpack-dev-server --config configs/webpack.config.js --open --env.awesome",
     "lint": "tslint --project tsconfig.json && echo \"running stylelint\" &&./node_modules/stylelint/bin/stylelint.js \"src/**/*.scss\"",
-    "tsc": "tsc -p . --noEmit",
+    "tsc": "tsc -p .",
     "tsc:watch": "tsc -p . --noEmit -w",
     "test": "jest --config jest.json",
     "test:update": "jest --config jest.json -u",

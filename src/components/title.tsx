@@ -7,7 +7,7 @@ interface ITitle {
   name: string;
 }
 
-export class Title extends React.Component<ITitle, {}> {
+export class Title extends React.Component<ITitle> {
   
   constructor(props: ITitle) {
     super(props);
