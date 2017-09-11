@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const https = require('https');
@@ -9,11 +9,16 @@ server.use(logger('combined'));
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('starting dev server');
-  const webpackDevMiddleware = require("webpackdevmiddleware");
+  
   const webpack = require("webpack");
-  const webpackConfig = require("./webpack.config.js");
-  server.use(webpackDevMiddleware(webpack(webpackConfig)));
-  server.use(webpackDevMiddleware(webpack(webpackConfig)));
+  const webpackDevMiddleware = require("webpack-dev-middleware");
+  const webpackConfig = require("./configs/webpack.config.js");
+  const compiler = webpack(webpackConfig);
+  
+  server.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath
+  }));
+  
 } else {
   console.log('starting production server');
   server.use(express.static('build'));

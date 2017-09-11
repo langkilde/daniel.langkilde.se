@@ -14,27 +14,6 @@ const PATHS = {
   images: path.resolve(__dirname, '../src/images')
 };
 
-const DEV_SERVER = {
-  hot: true,
-  hotOnly: true,
-  historyApiFallback: true,
-  overlay: true,
-  stats: {
-    providedExports: false,
-    chunks: false,
-    hash: false,
-    version: false,
-    modules: false,
-    reasons: false,
-    children: false,
-    source: false,
-    errors: true,
-    errorDetails: true,
-    warnings: false,
-    publicPath: false
-  }
-};
-
 module.exports = (env = {}) => {
   console.log({ env });
   const isBuild = !!env.build;
@@ -44,8 +23,10 @@ module.exports = (env = {}) => {
   return {
     cache: true,
     devtool: isDev ? 'eval-source-map' : 'source-map',
-    devServer: DEV_SERVER,
-
+    devServer: {
+      inline: false,
+      contentBase: './build'
+    },
     context: PATHS.root,
 
     entry: {
@@ -54,6 +35,7 @@ module.exports = (env = {}) => {
         './src/index.tsx',
       ],
     },
+    
     output: {
       path: PATHS.build,
       filename: isDev ? '[name].js' : '[name].[hash].js',
@@ -70,7 +52,7 @@ module.exports = (env = {}) => {
         {
           test: /\.tsx?$/,
           include: PATHS.src,
-          loader: (env.awesome ?
+          use: (env.awesome ?
               [
                 { loader: 'react-hot-loader/webpack' },
                 {
@@ -111,24 +93,29 @@ module.exports = (env = {}) => {
         {
           test: /\.json$/,
           include: [PATHS.src],
-          loader: { loader: 'json-loader' },
+          use: {
+            loader: 'json-loader'
+          },
         },
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract({
+          use: ExtractTextPlugin.extract({
             use: 'css-loader'
           })
         },
         {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract({
+          use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: "css-loader!sass-loader",
+            use: [
+              "css-loader",
+              "sass-loader"
+            ],
           }),
         },
         {
           test: /\.(jpe?g|png|gif|svg|ico)$/i,
-          loaders: [
+          use: [
             'file-loader?hash=sha512&limit=1000&digest=hex&name=[hash].[ext]',
             'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
           ]
