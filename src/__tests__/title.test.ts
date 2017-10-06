@@ -1,6 +1,10 @@
-import { shallow } from "enzyme";
+import * as enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import * as React from "react";
-import {Title} from "../components/title";
+
+enzyme.configure({ adapter: new Adapter() });
+
+import {Title} from "../components/Title";
 
 describe("Testing title component", () => {
   it("renders", () => {
@@ -10,7 +14,7 @@ describe("Testing title component", () => {
         name: "Daniel Langkilde",
       },
     );
-    const component = shallow(titleElement);
+    const component = enzyme.shallow(titleElement);
     const text = component.text();
     expect(text).toBe("Daniel LangkildePassionate about creating value using machine learning.");
   });

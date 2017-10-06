@@ -1,7 +1,6 @@
-import {IList} from "../components/list";
+import {IList} from "../components/List";
 
-export const bioList : IList = {
-  name: "Bio",
+export const bioList: IList = {
   list_items: [
     {
       description: "I live in Göteborg, Sweden.",
@@ -19,4 +18,5 @@ export const bioList : IList = {
       description: "Enjoy cooking, running and coding.",
     },
   ],
+  name: "Bio",
 };

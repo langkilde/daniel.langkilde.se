@@ -24,6 +24,7 @@ module.exports = (env = {}) => {
     cache: true,
     devtool: isDev ? 'eval-source-map' : 'source-map',
     devServer: {
+      historyApiFallback: true,
       inline: false,
       contentBase: './build'
     },

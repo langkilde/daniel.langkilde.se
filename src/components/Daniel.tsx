@@ -1,15 +1,15 @@
 import * as React from "react";
 
-import {List} from "./list";
-import {Portrait} from "./portrait";
-import {Title} from "./title";
-import {workList} from "../data/work";
-import {schoolList} from "../data/school";
+import {bioList} from "../data/bio";
 import {profilesList} from "../data/profiles";
-import {bioList} from "data/bio";
+import {schoolList} from "../data/school";
+import {workList} from "../data/work";
+import {List} from "./List";
+import {Portrait} from "./Portrait";
+import {Title} from "./Title";
 
-export class App extends React.Component<{}> {
-  
+export class Daniel extends React.Component<{}> {
+
   public render() {
     return (
       <div className="section group">

@@ -1,41 +1,28 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import { App } from "./components/app";
+import {Provider} from "react-redux";
+import {Route, Router} from "react-router-dom";
+import {applyMiddleware, createStore, Store as ReduxStore} from "redux";
+import reduxThunk from "redux-thunk";
 
 import "./images/favicon.ico";
 import "./style/scss/all.scss";
 
-const renderRoot = (app: JSX.Element) => {
-  ReactDOM.render(app, document.getElementById("root"));
-};
+import {Daniel} from "./components/Daniel";
+import {MachineLearning} from "./components/machinelearning/MachineLearning";
+import history from "./historyCreator";
+// import {reducers} from "./reducers/index";
+import {Store} from "./store/store";
+import {Projects} from "./components/Projects";
 
-if (process.env.NODE_ENV === "production") {
-  renderRoot((
-    <App />
-  ));
-} else {
-  const HotContainer = require("react-hot-loader").AppContainer;
-  renderRoot((
-    <HotContainer>
-      <App />
-    </HotContainer>
-  ));
+// const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+// const store: ReduxStore<Store.All> = createStoreWithMiddleware(reducers);
 
-  if (module.hot) {
-    module.hot.accept("./app", async () => {
-      const NextApp = (await System.import("./components/app")).App;
-      renderRoot((
-        <HotContainer>
-          <NextApp />
-        </HotContainer>
-      ));
-    });
-
-    // reducers
-    // module.hot.accept("../modules/root-reducer", () => {
-    //   const newRootReducer = require("./root-reducer").default;
-    //   store.replaceReducer(newRootReducer);
-    // });
-  }
-}
+ReactDOM.render(
+  <Router history={history}>
+    <div>
+      <Route exact={true} path="/" component={Daniel}/>
+      <Route path="/projects" component={Projects}/>
+    </div>
+  </Router>
+  , document.getElementById("root"));

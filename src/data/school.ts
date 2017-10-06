@@ -1,45 +1,45 @@
-import {IList} from "../components/list";
+import {IList} from "../components/List";
 
 export const schoolList: IList = {
-  name: "School",
   list_items: [
   {
-    time: "2013-2016",
+    description: "M.Sc. Engineering Mathematics",
     link:
   "https://www.chalmers.se/en/education/programmes/mastersinfo/" +
   "Pages/EngineeringMathematicsandComputationalScience.aspx",
     link_text: "Chalmers",
-    description: "M.Sc. Engineering Mathematics",
+    time: "2013-2016",
   },
   {
-    time: "2007-2010",
+    description: "B.Sc. Engineering Physics",
     link: "https://www.chalmers.se/sv/utbildning/programpagrundniva/Sidor/Tekniskfysik.aspx",
     link_text: "Chalmers",
-    description: "B.Sc. Engineering Physics",
+    time: "2007-2010",
   },
   {
-    time: "Fall 2014",
+    description: "Visiting Scholar",
     link: "https://amplab.cs.berkeley.edu/",
     link_text: "AMP Lab, UC Berkeley",
-    description: "Visiting Scholar",
+    time: "Fall 2014",
   },
   {
-    time: "Spring 2007",
+    description: "Chinese language course",
     link: "http://en.sjtu.edu.cn/",
     link_text: "Jiao Tong University",
-    description: "Chinese language course",
+    time: "Spring 2007",
   },
   {
-    time: "2009-2017",
+    description: "Research Student",
     link: "http://www.cee.org/researchscienceinstitute",
     link_text: "Research Academy of Young Scientists",
-    description: "Research Student",
+    time: "2009-2017",
   },
   {
-    time: "2003-2006",
+    description: "High School",
     link: "http://www.samskolan.se/",
     link_text: "Göteborgs Högre Samskola",
-    description: "High School",
+    time: "2003-2006",
   },
   ],
+  name: "School",
 };

@@ -9,17 +9,14 @@ interface IListItem {
 
 export interface IList {
   name: string;
-  list_items: Array<IListItem>
+  list_items: IListItem[];
 }
 
 export class List extends React.Component<IList> {
   
-  private constructor(props: IList) {
-    super(props);
-  }
-  
   private static renderItem(ListItem: IListItem) {
     if (ListItem.link && ListItem.time) {
+      
       return (
         <li key={ListItem.description} className="mobile-specific-list">
           {ListItem.description}, <a href={ListItem.link}>{ListItem.link_text}</a>, {ListItem.time}
@@ -27,17 +24,23 @@ export class List extends React.Component<IList> {
       );
     }
     if (ListItem.link) {
+      
       return (
         <li key={ListItem.description} className="mobile-specific-list">
           {ListItem.description} - <a href={ListItem.link}>{ListItem.link_text}</a>
         </li>
       );
     }
+    
     return (
       <li key={ListItem.description} className="mobile-specific-list">
         {ListItem.description}
       </li>
     );
+  }
+  
+  private constructor(props: IList) {
+    super(props);
   }
   
   public render() {

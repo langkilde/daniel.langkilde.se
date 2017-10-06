@@ -1,37 +1,37 @@
-import {IList} from "../components/list";
+import {IList} from "../components/List";
 
 export const workList: IList = {
-  name: "Work",
   list_items: [
     {
-      time: "2016-current",
+      description: "Team Lead, Collection & Analysis",
       link: "https://www.recordedfuture.com/",
       link_text: " Recorded Future",
-      description: "Team Lead, Collection & Analysis",
+      time: "2016-current",
     },
     {
-      time: "2014-2016",
+      description: "Machine Learning Engineer",
       link: "https://www.recordedfuture.com/",
       link_text: "Recorded Future",
-      description: "Machine Learning Engineer",
+      time: "2014-2016",
     },
     {
-      time: "2013-current",
+      description: "Board of Directors",
       link: "http://www.chalmers.se/en/foundation/Pages/default.aspx",
       link_text: "Chalmers University of Technology",
-      description: "Board of Directors",
+      time: "2013-current",
     },
     {
-      time: "2009-2017",
+      description: "Founder",
       link: "http://www.raysforexcellence.se/",
       link_text: "Research Academy of Young Scientists",
-      description: "Founder",
+      time: "2009-2017",
     },
     {
-      time: "2012-2013",
+      description: "President",
       link: "http://www.chalmersstudentkar.se/en",
       link_text: "Chalmers Student Union",
-      description: "President",
+      time: "2012-2013",
     },
   ],
+  name: "Work",
 };
